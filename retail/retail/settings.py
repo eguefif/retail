@@ -29,11 +29,16 @@ DEBUG = bool(os.environ.get("DEBUG"))
 
 ALLOWED_HOSTS = []
 
+GRAPHENE = {
+    "SCHEMA": "retail_graphql.schema.schema",
+}
+
 
 # Application definition
 
 INSTALLED_APPS = [
     "product.apps.ProductConfig",
+    "graphene_django",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
