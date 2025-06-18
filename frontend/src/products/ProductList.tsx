@@ -1,21 +1,4 @@
-
-type ProductProps = {
-    product: Product,
-};
-
-function Product({ product }: ProductProps) {
-    return (
-        <div className="productCard">
-            <div className="title">{product.name}</div>
-            <div className="body">{product.description}</div>
-        </div>
-    )
-}
-
-type Product = {
-    name: string,
-    description: string
-}
+import ProductCard from './ProductCard.tsx'
 
 export default function ProductList() {
     const products = [
@@ -30,7 +13,7 @@ export default function ProductList() {
     ];
 
     const listProducts = products.map(product =>
-        <Product product={product} />
+        <ProductCard product={product} />
     );
 
     return (
