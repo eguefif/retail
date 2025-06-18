@@ -2,7 +2,7 @@
     {
         "model": "product.product",
         "fields": {
-            "name": "Hello learning space",
+            "name": "Gortex1",
             "barcode": 1023456789521,
             "type": "SHOES"
         }
@@ -10,7 +10,7 @@
     {
         "model": "product.product",
         "fields": {
-            "name": "Hello learning space",
+            "name": "Triller 3",
             "barcode": 1234567891234,
             "type": "SHOES"
         }

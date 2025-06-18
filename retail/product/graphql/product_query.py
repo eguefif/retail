@@ -1,10 +1,11 @@
 import graphene
 
 from product.graphql.product_type import ProductType
+from product.models import Product
 
 
-class ProductQueries(graphene.ObjectType):
+class ProductsQueries(graphene.ObjectType):
     products = graphene.List(ProductType)
 
-    def resolve_products(root, info, user_id):
-        return ProductType.objects.filter(user=user_id)
+    def resolve_products(root, info):
+        return Product.objects.all()
