@@ -1,0 +1,18 @@
+[
+    {
+        "model": "product.product",
+        "fields": {
+            "name": "Hello learning space",
+            "barcode": 1023456789521,
+            "type": "SHOES"
+        }
+    },
+    {
+        "model": "product.product",
+        "fields": {
+            "name": "Hello learning space",
+            "barcode": 1234567891234,
+            "type": "SHOES"
+        }
+    }
+]
