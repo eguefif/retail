@@ -10,3 +10,7 @@ dependencies = [
     "graphene-django>=3.2.3",
     "psycopg[binary]>=3.2.9",
 ]
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"

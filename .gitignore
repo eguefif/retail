@@ -8,7 +8,7 @@ wheels/
 
 # Virtual environments
 .venv
-retail/.env
+backend/retail/.env
 
 # Npm react
 # Logs
