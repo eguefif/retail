@@ -1,7 +1,7 @@
 services:
   db:
     image: postgres:17
-    container_name: ls-pg
+    container_name: retail-pg
     environment:
       POSTGRES_USER: devuser
       POSTGRES_PASSWORD: devpas1234

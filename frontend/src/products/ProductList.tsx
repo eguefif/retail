@@ -13,7 +13,7 @@ export default function ProductList() {
     ];
 
     const listProducts = products.map(product =>
-        <ProductCard product={product} />
+        <ProductCard product={product} key={product.name} />
     );
 
     return (
