@@ -5,4 +5,4 @@ from product.models import Product
 class ProductType(DjangoObjectType):
     class Meta:
         model = Product
-        fields = ("id", "name", "barcode", "type")
+        fields = ("id", "name", "description", "barcode", "type")

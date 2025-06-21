@@ -1,26 +1,31 @@
-import ProductCard from './ProductCard.tsx'
+import type { Product } from "./ProductTypes.ts";
+import ProductCard from "./ProductCard.tsx";
+import { gql, useQuery } from "@apollo/client";
+
+const PRODUCTS_QUERY = gql`
+  query products {
+    products {
+      id
+      name
+      description
+    }
+  }
+`;
 
 export default function ProductList() {
-    const products = [
-        {
-            name: "Red Rooster",
-            description: "fsdfdsafds fsdf dsf dsf dsaf dsfsf sf sdf "
-        },
-        {
-            name: "Calla de choe",
-            description: "fsdfdsafds fsdf dsf dsf dsaf dsfsf sf sdf "
-        },
-    ];
+  const { loading, error, data } = useQuery(PRODUCTS_QUERY);
 
-    const listProducts = products.map(product =>
-        <ProductCard product={product} key={product.name} />
-    );
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+  console.log(data);
 
-    return (
-        <>
-            <div className="productList">
-                {listProducts}
-            </div>
-        </>
-    )
+  const listProducts = data.products.map((product: Product) => (
+    <ProductCard product={product} key={product.id} />
+  ));
+
+  return (
+    <>
+      <div className="productList">{listProducts}</div>
+    </>
+  );
 }
