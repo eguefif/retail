@@ -1,17 +1,3 @@
-# Python-generated files
-__pycache__/
-*.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
-
-backend/retail/.venv
-
-# Virtual environments
-backend/retail/.env
-
-# Npm react
 # Logs
 logs
 *.log
