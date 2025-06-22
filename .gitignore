@@ -6,8 +6,9 @@ dist/
 wheels/
 *.egg-info
 
+backend/retail/.venv
+
 # Virtual environments
-.venv
 backend/retail/.env
 
 # Npm react
