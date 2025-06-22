@@ -1,5 +1,5 @@
-import type { Product } from "./ProductTypes.ts";
-import ProductCard from "./ProductCard.tsx";
+import type { Product } from "./ProductTypes";
+import ProductCard from "./ProductCard";
 import { gql, useQuery } from "@apollo/client";
 
 const PRODUCTS_QUERY = gql`
@@ -17,7 +17,6 @@ export default function ProductList() {
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
-  console.log(data);
 
   const listProducts = data.products.map((product: Product) => (
     <ProductCard product={product} key={product.id} />
