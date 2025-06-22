@@ -29,11 +29,6 @@ DEBUG = bool(os.environ.get("DEBUG"))
 
 ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:5173",
-    "http://localhost:5173",
-]
-
 GRAPHENE = {
     "SCHEMA": "retail_graphql.schema.schema",
 }
@@ -51,7 +46,6 @@ INSTALLED_APPS = [
     "product.apps.ProductConfig",
     "corsheaders",
     "graphene_django",
-    "corsheaders",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
