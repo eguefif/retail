@@ -8,4 +8,5 @@ class ProductsQueries(graphene.ObjectType):
     products = graphene.List(ProductType)
 
     def resolve_products(root, info):
+        import pdb; pdb.set_trace()
         return Product.objects.all()
