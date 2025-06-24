@@ -19,10 +19,10 @@ You first need to install the dependencies liste above.
 ### The backend
 Before that, run `docker compose up`
 ```bash
-cd backend
+cd backend/retail/
 uv sync
-uv run ./retail/manage.py createmigrations
-uv run ./retail/manage.py migrate
+uv run ./manage.py createmigrations
+uv run ./manage.py migrate
 ```
 
 ### The frontend
@@ -30,6 +30,6 @@ TODO
 
 ## How to run the project
 In different terminals, run the following commands:
-* cd backend && uv run ./retail/manage.py runserver
+* cd backend/retail && uv run ./manage.py runserver
 * cd frontend && npm run dev
 * docker compose up
