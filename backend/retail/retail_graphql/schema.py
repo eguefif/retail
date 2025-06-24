@@ -1,5 +1,4 @@
 import graphene
-from graphene_django.utils.testing import graphene_settings
 
 from product.graphql.product_query import ProductsQueries
 from cart.graphql.cart_query import CartQueries
@@ -14,10 +13,7 @@ class ViewerQueries(graphene.ObjectType):
         if not session_key:
             info.context.session.create()
         (cart, result) = CartType.objects.get_or_create(session_key=session_key)
-        if result:
-            return cart
-        else:
-            return None
+        return cart
 
 
 class Query(ProductsQueries,

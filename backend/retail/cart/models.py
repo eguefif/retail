@@ -3,14 +3,14 @@ from product.models import Product
 
 #class Cart(models.Model):
 class Cart(models.Model):
-    session_key = models.CharField(default='')
+    session_key = models.CharField(max_length=32, default='')
     last_activity_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
 class CartItem(models.Model):
     class ItemState(models.TextChoices):
         IN_CART = 'IN_CART', 'In Cart'
-        PENDING = 'PENDING', ' Paiement pending'
+        PENDING = 'PENDING', ' Payment pending'
         CHECKED_OUT = 'CHECKED_OUT', 'Checked Out'
 
     cart = models.ForeignKey(Cart, related_name="cart_items", on_delete=models.CASCADE)
