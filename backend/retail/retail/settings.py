@@ -40,10 +40,19 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
 ]
 
+CORS_ALLOW_CREDENTIALS = True
+
+SESSION_COOKIE_SAMESITE = None
+SESSION_COOKIE_SECURE = False
+SESSION_COOKIE_HTTPONLY = True
+SESSION_SAVE_EVERY_REQUEST = False
+SESSION_COOKIE_AGE = 3600 * 24 * 2
+
 # Application definition
 
 INSTALLED_APPS = [
     "product.apps.ProductConfig",
+    "cart.apps.CartConfig",
     "corsheaders",
     "graphene_django",
     "django.contrib.admin",
