@@ -17,7 +17,9 @@ const ADD_ITEM_MUTATION = gql`
 `;
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const [mutateFunction, { error }] = useMutation(ADD_ITEM_MUTATION);
+  const [mutateFunction, { error }] = useMutation(ADD_ITEM_MUTATION, {
+    refetchQueries: ["Viewer"],
+  });
 
   if (error) {
     console.error(error);
