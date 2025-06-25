@@ -2,6 +2,7 @@ import graphene
 
 from product.graphql.product_query import ProductsQueries
 from cart.graphql.cart_query import CartQueries
+from cart.graphql.cart_mutations import CartMutations
 
 from cart.graphql.cart_type import CartType
 
@@ -22,5 +23,8 @@ class Query(ProductsQueries,
             graphene.ObjectType):
     pass
 
+class Mutation(CartMutations, graphene.ObjectType):
+    pass
 
-schema = graphene.Schema(query=Query)
+
+schema = graphene.Schema(query=Query, mutation=Mutation)

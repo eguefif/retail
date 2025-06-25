@@ -5,16 +5,19 @@ type ProductCardProps = {
   product: Product;
 };
 
-const ADD_ITEM_QUERY = gql`
+const ADD_ITEM_MUTATION = gql`
   mutation AddItem($productId: ID!) {
     addItem(productId: $productId) {
-      id
+      item {
+        id
+      }
+      success
     }
   }
 `;
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const [mutateFunction, { error }] = useMutation(ADD_ITEM_QUERY);
+  const [mutateFunction, { error }] = useMutation(ADD_ITEM_MUTATION);
 
   if (error) {
     console.error(error);
