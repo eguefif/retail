@@ -1,8 +1,12 @@
 import type { Product } from "../products/ProductTypes.ts";
 
+export type CartRow = {
+  quantity: number;
+  product: Product;
+};
+
 export type CartItem = {
   id: string;
-  quantity: number;
   product: Product;
 };
 
@@ -11,5 +15,5 @@ export type Cart = {
 };
 
 export type CartItemProps = {
-  item: CartItem;
+  item: CartRow;
 };

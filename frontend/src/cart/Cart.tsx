@@ -1,5 +1,5 @@
 import CartItemRow from "./CartItemRow";
-import type { Cart, CartItem } from "./CartTypes";
+import type { Cart, CartItem, CartRow } from "./CartTypes";
 import { gql, useQuery } from "@apollo/client";
 
 const QUERY_VIEWER = gql`
@@ -9,6 +9,7 @@ const QUERY_VIEWER = gql`
       cartItems {
         id
         product {
+          id
           name
           description
         }
@@ -17,6 +18,20 @@ const QUERY_VIEWER = gql`
     }
   }
 `;
+
+function groupItems(items: CartItem[]): CartRow[] {
+  const rows: CartRow[] = [];
+  items.forEach((item) => {
+    const index = rows.findIndex((row) => row.product.id === item.product.id);
+    if (index == -1) {
+      rows.push({ product: item.product, quantity: 1 });
+    } else {
+      rows[index].quantity += 1;
+    }
+  });
+
+  return rows;
+}
 
 export default function Cart() {
   const { loading, data, error } = useQuery(QUERY_VIEWER, {
@@ -27,14 +42,15 @@ export default function Cart() {
   if (error) return <div>Error: {error.message}</div>;
 
   const cart = data?.viewer;
-  const listItems = cart.cartItems.map((item: CartItem) => (
-    <CartItemRow item={item} key={item.id} />
+  const cartRows = groupItems(cart.cartItems);
+  const cartRowsView = cartRows.map((row: CartRow) => (
+    <CartItemRow item={row} key={row.product.id} />
   ));
   return (
     <>
       <div className="cart">
         <h1>Cart</h1>
-        <div>{listItems}</div>
+        <div>{cartRowsView}</div>
       </div>
     </>
   );
