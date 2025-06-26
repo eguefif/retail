@@ -2,7 +2,7 @@ import ProductList from "./products/ProductList.tsx";
 
 export default function MainContainer() {
   return (
-    <div>
+    <div className="main-container">
       <ProductList />
     </div>
   );

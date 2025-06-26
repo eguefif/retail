@@ -1,7 +1,11 @@
+.site-title {
+    font-size: 3rem;
+    margin: auto;
+}
 .cart {
     position: absolute;
-    top: 0;
-    right: 200px;
+    top: 50px;
+    right: 250px;
     display: flex;
     flex-direction: column;
     width: 200px;

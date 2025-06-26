@@ -27,37 +27,17 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = bool(os.environ.get("DEBUG"))
 
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+ALLOWED_HOSTS = []
 
 GRAPHENE = {
     "SCHEMA": "retail_graphql.schema.schema",
 }
 
-CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:5173",
-    "http://127.0.0.1:8000",
-    "http://localhost:8000",
-    "http://localhost:5173",
-]
-
-CORS_ALLOW_CREDENTIALS = True
-
-CSRF_TRUSTED_ORIGINS = [
-    "http://127.0.0.1:5173",
-    "http://127.0.0.1:8000",
-    "http://localhost:8000",
-    "http://localhost:5173",
-]
-
-SESSION_COOKIE_SAMESITE = 'Lax'
-SESSION_COOKIE_SECURE = False
 SESSION_SAVE_EVERY_REQUEST = True
-# Application definition
 
 INSTALLED_APPS = [
     "product.apps.ProductConfig",
     "cart.apps.CartConfig",
-    "corsheaders",
     "graphene_django",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -68,7 +48,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",

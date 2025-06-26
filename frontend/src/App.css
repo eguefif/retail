@@ -1,6 +1,16 @@
 #root {
-    max-width: 1280px;
+    witdh: 100%;
     margin: 0 auto;
     padding: 2rem;
     display: flex;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.main-container {
 }
