@@ -17,3 +17,4 @@ class CartItem(models.Model):
     product = models.ForeignKey(Product, related_name="product",on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=0)
     state = models.CharField(max_length=20, choices=ItemState.choices, default=ItemState.IN_CART)
+    created_at = models.DateTimeField(auto_now_add=True)

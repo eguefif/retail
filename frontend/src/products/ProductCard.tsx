@@ -26,7 +26,6 @@ export default function ProductCard({ product }: ProductCardProps) {
   }
 
   const addItem = (productId: string) => {
-    console.log(`Adding product with ID ${productId}`);
     mutateFunction({ variables: { productId: productId } });
   };
   return (
