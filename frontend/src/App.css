@@ -4,33 +4,3 @@
     padding: 2rem;
     display: flex;
 }
-
-.productList {
-    max-width: 1270px;
-    margin: 0;
-    display: flex;
-}
-.productCard {
-    margin: 15px;
-    width: 300px;
-    height: 300px;
-    border: solid 0.1rem hsl(220deg 60% 50% / 0.333);
-    padding: 7px;
-    box-shadow: 
-        1px 2px 2px hsl(220deg 60% 50% / 0.333),
-        2px 4px 4px hsl(220deg 60% 50% / 0.333),
-        3px 6px 6px hsl(220deg 60% 50% / 0.333),
-}
-
-.productCard .title {
-    font-weight: bold;
-    font-size: 1.5rem;
-    margin: auto;
-}
-
-.productCard:hover{
-    border: solid 0.1rem hsl(180deg 60% 50% / 0.333);
-}
-
-.productCard .body {
-}

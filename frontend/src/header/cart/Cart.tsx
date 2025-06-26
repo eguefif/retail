@@ -1,6 +1,7 @@
 import CartItemRow from "./CartItemRow";
 import type { Cart, CartItem, CartRow } from "./CartTypes";
 import { gql, useQuery } from "@apollo/client";
+import "./cartStyle.css";
 
 const QUERY_VIEWER = gql`
   query Viewer {

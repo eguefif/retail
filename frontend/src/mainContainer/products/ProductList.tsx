@@ -1,6 +1,7 @@
 import type { Product } from "./ProductTypes";
 import ProductCard from "./ProductCard";
 import { gql, useQuery } from "@apollo/client";
+import "./product.css";
 
 const PRODUCTS_QUERY = gql`
   query products {

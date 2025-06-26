@@ -1,5 +1,6 @@
 import type { Product } from "./ProductTypes.ts";
 import { gql, useMutation } from "@apollo/client";
+import "./product.css";
 
 type ProductCardProps = {
   product: Product;
