@@ -4,8 +4,8 @@
 }
 .cart {
     position: absolute;
-    top: 50px;
-    right: 250px;
+    top: 100px;
+    right: 0px;
     display: flex;
     flex-direction: column;
     width: 200px;

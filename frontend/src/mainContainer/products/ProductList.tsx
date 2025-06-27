@@ -14,18 +14,18 @@ const PRODUCTS_QUERY = gql`
 `;
 
 export default function ProductList() {
-  const { loading, error, data } = useQuery(PRODUCTS_QUERY);
+    const { loading, error, data } = useQuery(PRODUCTS_QUERY);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error.message}</div>;
 
-  const listProducts = data.products.map((product: Product) => (
-    <ProductCard product={product} key={product.id} />
-  ));
+    const listProducts = data.products.map((product: Product) => (
+        <ProductCard product={product} key={product.id} />
+    ));
 
-  return (
-    <>
-      <div className="productList">{listProducts}</div>
-    </>
-  );
+    return (
+        <>
+            <div className="productList">{listProducts}</div>
+        </>
+    );
 }
