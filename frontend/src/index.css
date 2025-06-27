@@ -24,8 +24,8 @@ a:hover {
 
 body {
     margin: 0;
-    display: flex;
-    place-items: center;
+    display: block;
+    place-items: start center;
     min-width: 320px;
     min-height: 100vh;
 }
@@ -67,26 +67,6 @@ button:focus-visible {
     }
 }
 
-.cart {
-    position: absolute;
-    top: 0;
-    right: 200px;
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-}
-
-.cart-item {
-    width: 100%;
-    display: flex;
-    align-items: between;
-    padding: 10px;
-    border-bottom: 1px solid #333;
-}
-
-.cart-item-quantity {
-}
-
-.cart-item-quantity {
-    margin-left: auto;
+.svg-style {
+    width: 65px;
 }

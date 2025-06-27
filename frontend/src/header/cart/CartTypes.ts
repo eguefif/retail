@@ -1,4 +1,4 @@
-import type { Product } from "../products/ProductTypes.ts";
+import type { Product } from "@/mainContainer/products/ProductTypes.ts";
 
 export type CartRow = {
   quantity: number;

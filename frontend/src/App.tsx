@@ -1,12 +1,12 @@
 import "./App.css";
-import ProductList from "./products/ProductList.tsx";
-import Cart from "./cart/Cart.tsx";
+import Header from "./header/Header.tsx";
+import MainContainer from "./mainContainer/MainContainer.tsx";
 
 function App() {
   return (
     <>
-      <Cart />
-      <ProductList />
+      <Header />
+      <MainContainer />
     </>
   );
 }
