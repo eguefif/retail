@@ -16,7 +16,7 @@ function getCookie(name: string): string {
 }
 
 const link = new HttpLink({
-    uri: "http://127.0.0.1:5173/graphql",
+    uri: "/graphql",
     credentials: "same-origin",
     headers: {
         "X-CSRFTOKEN": getCookie("csrftoken"),
